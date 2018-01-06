@@ -8,8 +8,8 @@ var options = {
 
 var options = {
     debug: true,
-    port: 8090,
-    device_adapter: 'TK103B'
+    port: 5000,
+    device_adapter: 'GT06'
 }
 
 var server = gps.server(options, function (device, connection) {

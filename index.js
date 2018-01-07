@@ -1,5 +1,5 @@
 var gps = require("gps-tracking");
-
+var contador = 0;
 var options = {
     'debug': false, //We don't want to debug info automatically. We are going to log everything manually so you can check what happens everywhere
     'port': 5000,
@@ -28,10 +28,10 @@ var server = gps.server(options, function (device, connection) {
 
     device.on("ping", function (data) {
         //this = device
-        console.log(data);
+        // console.log(data);
+        contador = contador+1;
         
-        console.log("Estoy aquí: " + data.latitude + ", " + data.longitude + " (" + this.getUID() + ")");
-
+        console.log("Estoy aquí: " + data.latitude + ", " + data.longitude + " (" + this.getUID() + ")"+"    NRO MESNAJE:  "+contador);
         //Look what informations the device sends to you (maybe velocity, gas level, etc)
         //console.log(data);
         return data;

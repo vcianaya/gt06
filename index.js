@@ -28,6 +28,8 @@ var server = gps.server(options, function (device, connection) {
 
     device.on("ping", function (data) {
         //this = device
+        console.log(data);
+        
         console.log("I'm here: " + data.latitude + ", " + data.longitude + " (" + this.getUID() + ")");
 
         //Look what informations the device sends to you (maybe velocity, gas level, etc)
